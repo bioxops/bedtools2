@@ -8,9 +8,8 @@
 ==========================================================================
 Usage and option summary
 ==========================================================================
-Usage:
+Usage::
 
-::
   sortBed [OPTIONS] -i <BED/GFF/VCF>
 
 ===========================      ===============================================================================================================================================================================================================
@@ -22,6 +21,8 @@ Usage:
 **-chrThenSizeD**                Sort by chromosome, then by feature size (desc).
 **-chrThenScoreA**               Sort by chromosome, then by score (asc).
 **-chrThenScoreD**               Sort by chromosome, then by score (desc).
+**-faidx (names.txt)**           Sort according to the chromosomes declared in "names.txt".
+**-header**                      Print the header from the A file prior to results.
 ===========================      ===============================================================================================================================================================================================================
 
 
@@ -31,9 +32,8 @@ Default behavior
 ==========================================================================
 By default, **sortBed** sorts a BED file by chromosome and then by start position in ascending order.
 
-For example:
+For example::
 
-::
   cat A.bed
   chr1 800 1000
   chr1 80  180
@@ -54,9 +54,8 @@ Optional sorting behavior
 ==========================================================================
 **sortBed** will also sorts a BED file by chromosome and then by other criteria.
 
-For example, to sort by chromosome and then by feature size (in descending order):
+For example, to sort by chromosome and then by feature size (in descending order)::
 
-::
   cat A.bed
   chr1 800 1000
   chr1 80  180
@@ -72,9 +71,8 @@ For example, to sort by chromosome and then by feature size (in descending order
 
 **Disclaimer:** it should be noted that **sortBed** is merely a convenience utility, as the UNIX sort utility
 will sort BED files more quickly while using less memory. For example, UNIX sort will sort a BED file
-by chromosome then by start position in the following manner:
+by chromosome then by start position in the following manner::
 
-::
   sort -k 1,1 -k2,2n a.bed
   chr1 1   10
   chr1 80  180
